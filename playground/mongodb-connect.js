@@ -22,21 +22,21 @@ console.log("Connected to MongoDB server");
 //
 // });
 
-// db.collection("Users").insertOne({
-// name: "Przemek",
-// age: 34,
-// location: "Parczew"
-//
-// }, (err, result) => {
-//
-// if (err) {
-//   return console.log("Unable to connect", err);
-// }
-//
-// console.log(JSON.stringify(result.ops[0]._id.getTimestamp(), undefined, 2));
-//
-//
-// });
+db.collection("Users").insertOne({
+name: "Przemek",
+age: 34,
+location: "Parczew"
+
+}, (err, result) => {
+
+if (err) {
+  return console.log("Unable to connect", err);
+}
+
+console.log(JSON.stringify(result.ops[0]._id.getTimestamp(), undefined, 2));
+
+
+});
 
 
 
