@@ -42,9 +42,9 @@ return res.status(404).send();
 
   Todo.findById(id).then((todo) => {
     if(!todo) {
-    res.status(200).send();
+    res.status(404).send();
     }
-    res.send({todo});
+    res.status(200).send({todo});
   }).catch((e) => {
     res.status(400).send();
   });
