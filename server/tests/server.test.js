@@ -104,7 +104,7 @@ var hexId = new ObjectID().toHexString();
 request(app)
 .get("/todos/" + hexId)
 .expect(404)
-.end(done)
+.end(done);
 });
 
 
@@ -112,6 +112,6 @@ it("Should return 404 if todo id is not valid", (done) => {
 request(app)
 .get("/todos/123")
 .expect(404)
-.end(done)
+.end(done);
 });
 });
