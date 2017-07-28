@@ -28,8 +28,7 @@ app.get("/", (req, res) => {
 res.send("Hello World");
 }, (e) => {
     res.status(400).send(e);
-  })
-});
+  });
 
 
 
