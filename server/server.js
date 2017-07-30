@@ -54,10 +54,35 @@ return res.status(404).send();
     }
     res.status(200).send({todo});
   }).catch((e) => {
-    res.status(400).send();
+    res.status(400).send(e);
   });
 
 });
+
+app.delete("/todos/:id", (req, res) => {
+  var id = req.params.id;
+
+  if(!ObjectID.isValid(id)) {
+//return because we want to stop execution of the function
+  return res.status(404).send();
+
+  }
+
+Todo.findByIdAndRemove(id).then((todo) => {
+if(!todo) {
+  res.status(404).send();
+}
+
+res.status(200).send({todo});
+
+}).catch((e) => {
+  res.status(400).send(e);
+});
+
+
+});
+
+
 
 
 
